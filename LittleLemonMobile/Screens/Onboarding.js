@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View, Keyboard, Platform } from 'react-native';
 import LittleLemonHeader from '../Components/LittleLemonHeader';
 
-const Onboarding = () => {
+const Onboarding = ({ navigation }) => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -69,6 +69,7 @@ const Onboarding = () => {
           disabled={isButtonDisabled}
           style={styles.button}
           onPress={() => {
+            navigation.navigate("Welcome")
           }
           }>
           <Text style={styles.buttonText}>Next</Text>
